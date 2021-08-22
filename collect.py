@@ -1,5 +1,5 @@
-import requests
-from bs4 import BeautifulSoup
+import dataSources.thoughtWorks
+from docs import category, generateDocs
 
 quarters = [
     ('Techniques', 'https://www.thoughtworks.com/radar/techniques', 'Tech Radar - Techniques'),
@@ -8,16 +8,11 @@ quarters = [
     ('Languages and frameworks', 'https://www.thoughtworks.com/radar/languages-and-frameworks', 'Tech Radar - Languages-and-frameworks')
 ]
 
-def printThoughtWorksList(category, url, eventCategory):
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, 'html.parser')
+categories = []
 
-    print('\n' + category + ':')
+for idx, part in enumerate(quarters):
+    newCategory = category(part[0], [])
+    newCategory.results = dataSources.thoughtWorks.getData(part[1], part[2])
+    categories.append( newCategory )
 
-    for entry in soup.find_all('div', {'data-event-category': eventCategory}):
-        ranking = entry.find('span', {'class': 'blip-graphic-id'}).text
-        name = entry.find('span', {'class': 'blip-name'}).text
-        print(ranking + ' ' + name)
-
-for part in quarters:
-    printThoughtWorksList(part[0], part[1], part[2])
+generateDocs(categories)
