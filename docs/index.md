@@ -114,3 +114,82 @@ collection: Languages and frameworks
 102.  React Hook Form
 103.  River
 104.  Webpack 5 Module Federation
+
+
+collection: Languages & Frameworks
+React
+Quarkus
+Akka
+Scala
+Kotlin
+.Net
+Javascript
+Golang
+Spring
+Reactor.io
+OpenAPI
+Python 3
+R for Analytics
+OpenTelemetry
+Serverless framework
+OAuth | OIDC
+LDAP
+SAML
+TypeScript
+
+
+collection: Tools & Platforms
+Backstage
+Istio
+JMeter
+Prometheus
+KNative
+Jenkins
+Terraform
+Ansible
+Packer
+Docker
+Kubernetes
+Cloud Functions
+ArgoCD
+
+
+collection: Data Management & Integration
+Apache Druid
+Google Cloud Data Fusion
+Kafka
+Apache Airflow
+Google Pub/Sub
+Apache Pulsar
+PostgreSQL
+MySQL
+LDAP Database
+Redis
+Google Spanner
+Protocol Buffers
+Apache Avro
+gRPC
+CloudSQL Postgres
+GraphQL
+
+
+collection: Practices & Techniques
+Web Single Sign On
+Pipelines as code
+Distributed Tracing
+Monitoring as code
+Continuous Integration
+Logging standards
+Fitness Functions
+Continuous Delivery
+Continuous Deployment
+Architecture Decision Records
+Legacy in a box
+Pull-based deployments
+Cloud lift and shift
+DevOps
+Site Reliability Engineering
+GitOps
+Error Budgets
+Naming Conventions
+Version Control
