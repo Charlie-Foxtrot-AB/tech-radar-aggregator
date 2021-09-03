@@ -1,0 +1,27 @@
+name: Commit collection updates
+
+on:
+  pull_request_review:
+    types: [submitted]
+    state: [approved]
+
+jobs:
+  Commit_collection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run collection script
+        run: python collect.py
+      - name: Commit new collection
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "feat: commit collection [AUTOMATED]"
+          branch: ${GITHUB_REF##*/}
