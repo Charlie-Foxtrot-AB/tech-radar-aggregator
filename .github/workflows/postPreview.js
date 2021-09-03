@@ -6,6 +6,6 @@ module.exports = function({github, context}) {
         issue_number: context.issue.number,
         owner: context.repo.owner,
         repo: context.repo.repo,
-        body: preview
+        body: `<details><summary>Output preview:</summary>${preview}</details>`
       })
 }
