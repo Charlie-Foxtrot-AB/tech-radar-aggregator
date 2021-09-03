@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-export default function(github, context) {
+module.exports = function(github, context) {
     const preview = fs.readFileSync('../docs/index.md').toString();
     github.issues.createComment({
         issue_number: context.issue.number,
