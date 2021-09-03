@@ -21,8 +21,7 @@ jobs:
       - name: Run collection script
         run: python collect.py
       - name: Commit new collection
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: "feat: commit collection [AUTOMATED]"
-          branch: ${{ github.head_ref }}
-          base: ${{ github.head_ref }}
+        run: |
+          git add --all
+          git commit -m "feat: commit collection [AUTOMATED]"
+          git push
