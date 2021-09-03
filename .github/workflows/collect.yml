@@ -22,5 +22,5 @@ jobs:
       - uses: actions/github-script@v4
         with:
           script: |
-            const script = require('./postPreview.js')
+            const script = require('./.github/workflows/postPreview.js')
             console.log(script({github, context}))
