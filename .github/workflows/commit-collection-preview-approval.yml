@@ -21,7 +21,7 @@ jobs:
       - name: Run collection script
         run: python collect.py
       - name: Commit new collection
-        run: |
-          git add --all
-          git commit -m "feat: commit collection [AUTOMATED]"
-          git push
+        uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          message: "feat: commit collection [AUTOMATED]"
