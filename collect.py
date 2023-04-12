@@ -1,6 +1,8 @@
 import dataSources.thoughtWorks
+import dataSources.ingka
 from docs import generateDocs
 
-categories = dataSources.thoughtWorks.getTechList()
+thoughtWorks = dataSources.thoughtWorks.getTechList()
+ingka = dataSources.ingka.getTechList()
 
-generateDocs(categories)
+generateDocs(thoughtWorks + ingka)
